@@ -3,6 +3,7 @@ import { FiArrowLeft, FiEdit2, FiTrash2, FiDownload } from 'react-icons/fi'
 import { useInvoice } from '../context/InvoiceContext'
 import { StatusBadge } from '../components/StatusBadge'
 import { formatDateDisplay } from '../utils/dateUtils'
+import { generateInvoicePDF } from '../utils/pdfGenerator'
 import { useState } from 'react'
 
 export function InvoiceDetailPage() {
@@ -77,7 +78,10 @@ export function InvoiceDetailPage() {
                   Mark as Paid
                 </button>
               )}
-              <button className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 hover:bg-blue-200 dark:hover:bg-blue-900/50 rounded-lg transition-colors text-sm font-medium">
+              <button
+                onClick={() => generateInvoicePDF(invoice)}
+                className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 hover:bg-blue-200 dark:hover:bg-blue-900/50 rounded-lg transition-colors text-sm font-medium"
+              >
                 <FiDownload size={18} />
                 Download
               </button>
