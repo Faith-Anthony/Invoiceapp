@@ -141,7 +141,7 @@ export function InvoiceFormPage() {
   const total = formData.items.reduce((sum, item) => sum + item.total, 0)
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-slate-900 p-4 md:p-6 lg:p-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-900 p-4 sm:p-5 md:p-6 lg:p-8">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -164,7 +164,7 @@ export function InvoiceFormPage() {
               Bill From
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Your Company
@@ -251,8 +251,8 @@ export function InvoiceFormPage() {
               Bill To
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="md:col-span-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="sm:col-span-2 md:col-span-3">
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Client Name *
                 </label>
@@ -274,7 +274,7 @@ export function InvoiceFormPage() {
                 )}
               </div>
 
-              <div className="md:col-span-3">
+              <div className="sm:col-span-2 md:col-span-3">
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Email *
                 </label>
@@ -296,7 +296,7 @@ export function InvoiceFormPage() {
                 )}
               </div>
 
-              <div className="md:col-span-3">
+              <div className="sm:col-span-2 md:col-span-3">
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Address *
                 </label>
@@ -368,7 +368,7 @@ export function InvoiceFormPage() {
               Invoice Details
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Invoice Date

@@ -13,7 +13,7 @@ function App() {
         <Router>
           <div className="flex dark:bg-slate-900">
             <Sidebar />
-            <main className="flex-1 ml-[100px] md:ml-[120px] lg:ml-[100px]">
+            <main className="flex-1 sm:ml-[80px] md:ml-[100px] lg:ml-[100px]">
               <Routes>
                 <Route path="/" element={<InvoiceListPage />} />
                 <Route path="/invoice/:id" element={<InvoiceDetailPage />} />

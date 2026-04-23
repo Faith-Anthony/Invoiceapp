@@ -12,10 +12,10 @@ export function InvoiceListItem({ invoice }: InvoiceListItemProps) {
   return (
     <Link
       to={`/invoice/${invoice.id}`}
-      className="block p-4 md:p-6 bg-white dark:bg-slate-800 rounded-lg hover:shadow-md dark:hover:shadow-slate-900 transition-all hover:scale-105 transform duration-200 border border-transparent hover:border-primary/20 dark:border-slate-700"
+      className="block p-4 sm:p-5 md:p-6 bg-white dark:bg-slate-800 rounded-lg hover:shadow-md dark:hover:shadow-slate-900 transition-all hover:scale-105 transform duration-200 border border-transparent hover:border-primary/20 dark:border-slate-700"
     >
       <div className="flex flex-col md:grid md:grid-cols-12 gap-3 md:gap-4 items-start md:items-center">
-        {/* Mobile Layout */}
+        {/* Mobile & Tablet Layout */}
         <div className="md:hidden w-full">
           <div className="flex items-start justify-between mb-3">
             <div>
