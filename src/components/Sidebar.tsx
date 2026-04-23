@@ -20,10 +20,11 @@ export function Sidebar() {
       {/* Theme Toggle */}
       <button
         onClick={toggleTheme}
-        className="p-2.5 md:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white mb-4 md:mb-6"
+        className="p-3 rounded-lg bg-white/20 hover:bg-white/30 transition-colors text-white mb-6 flex items-center justify-center shadow-md hover:shadow-lg"
         aria-label="Toggle theme"
+        title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
       >
-        {isDark ? <FiSun size={20} /> : <FiMoon size={20} />}
+        {isDark ? <FiSun size={22} /> : <FiMoon size={22} />}
       </button>
 
       {/* Profile Avatar */}
