@@ -16,8 +16,12 @@ A fully functional Invoice Management Application built with React 18, TypeScrip
 - ✅ **Form Validation** - Client name, email format, quantity/price validation
 - ✅ **Status Filtering** - Filter by All, Draft, Pending, or Paid
 - ✅ **Light & Dark Mode** - Theme toggle with localStorage persistence
-- ✅ **Empty State** - Shows when no invoices exist with helpful message
+- ✅ **Empty State** - Person holding microphone illustration with helpful message
 - ✅ **Visual Feedback** - Hover states on all interactive elements
+- ✅ **PDF Export** - Download invoices as professional PDF files
+- ✅ **Responsive Navigation** - Top header on mobile/tablet, left sidebar on desktop
+- ✅ **Editable Bill From** - Customize company information for each invoice
+- ✅ **Placeholder-based Form** - Clean input fields with helpful placeholder text
 
 ### Responsive Design
 - ✅ **Mobile** (320px+) - Single column layout with optimized spacing
@@ -45,6 +49,7 @@ A fully functional Invoice Management Application built with React 18, TypeScrip
 | **State Management** | Context API + LocalStorage |
 | **Icons** | React Icons 5.6.0 |
 | **Date Formatting** | date-fns 4.1.0 |
+| **PDF Generation** | jsPDF |
 | **Utilities** | UUID 14.0.0 |
 
 ## 📦 Project Structure
@@ -72,7 +77,8 @@ src/
 │   └── index.ts            # Invoice, InvoiceItem, CreateInvoiceInput
 │
 ├── utils/                   # Helper functions
-│   └── dateUtils.ts        # Date formatting utilities
+│   ├── dateUtils.ts        # Date formatting utilities
+│   └── pdfGenerator.ts     # PDF export functionality
 │
 ├── App.tsx                 # Main app with routing
 └── main.tsx                # Vite entry point
@@ -116,15 +122,23 @@ npm run preview
 ## 📋 Form Features
 
 ### Create/Edit Invoice Form
-- **Bill From Section** - Read-only company info (disabled fields)
+- **Bill From Section** - Editable company information (name, email, address, city, postal code, country)
 - **Bill To Section** - Client name, email, address, city, postal code, country
-- **Invoice Details** - Invoice date (disabled), due date, status selector
+- **Invoice Details** - Invoice date (auto-set), due date, status selector
 - **Item List** - Dynamic items with description, qty, price, and total
   - Add multiple items with "Add Item Row" button
   - Remove items with trash icon
   - Automatic total calculation
+- **Placeholder Inputs** - Clean form fields with helpful placeholder text
 - **Validation Messages** - Real-time error feedback
 - **Save/Cancel Actions** - Clear CTA buttons
+
+### Invoice Actions
+- **View Details** - Click any invoice to see full details
+- **Edit Invoice** - Modify any invoice including company and client info
+- **Download PDF** - Export invoice as professional PDF with formatted layout
+- **Mark as Paid** - Change pending invoices to paid status
+- **Delete Invoice** - Remove invoices with confirmation modal
 
 ## 🎨 Responsive Breakpoints
 
@@ -170,6 +184,12 @@ npm run preview
 interface Invoice {
   id: string
   invoiceNumber: string
+  companyName: string
+  companyEmail: string
+  companyAddress: string
+  companyCity?: string
+  companyPostalCode?: string
+  companyCountry?: string
   clientName: string
   clientEmail: string
   clientAddress: string
@@ -206,7 +226,6 @@ interface InvoiceItem {
 
 ## 🔧 Future Improvements
 
-- [ ] Export invoices to PDF
 - [ ] Email invoice functionality
 - [ ] Cloud backend integration
 - [ ] User authentication
@@ -216,6 +235,7 @@ interface InvoiceItem {
 - [ ] Multi-currency support
 - [ ] File upload for attachments
 - [ ] Invoice comments/history
+- [ ] Bulk invoice operations
 
 ## 🚀 Deployment
 
@@ -277,6 +297,3 @@ Faith Anthony
 
 ---
 
-**Last Updated:** April 2026
-**Version:** 1.0.0
-**Status:** ✅ Complete - All Stage 2 requirements met
