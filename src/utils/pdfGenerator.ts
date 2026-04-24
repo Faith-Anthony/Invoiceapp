@@ -24,7 +24,7 @@ export function generateInvoicePDF(invoice: Invoice) {
     const { fontSize = 10, fontStyle = 'normal', color = [0, 0, 0] } = options
     doc.setFontSize(fontSize)
     doc.setTextColor(color[0], color[1], color[2])
-    doc.setFontStyle(fontStyle)
+    doc.setFont('', fontStyle)
     doc.text(text, x, y)
   }
 
@@ -85,7 +85,7 @@ export function generateInvoicePDF(invoice: Invoice) {
   // Items Table Header
   const colX = [margin, margin + 80, pageWidth - margin - 50, pageWidth - margin - 20]
   doc.setFontSize(10)
-  doc.setFont(undefined, 'bold')
+  doc.setFont('', 'bold')
   doc.setTextColor(255, 255, 255)
   doc.setFillColor(primaryColor[0], primaryColor[1], primaryColor[2])
   doc.rect(margin, yPosition - 5, pageWidth - 2 * margin, 8, 'F')
