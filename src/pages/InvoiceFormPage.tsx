@@ -36,12 +36,12 @@ export function InvoiceFormPage() {
       }
     }
     return {
-      companyName: 'Your Company',
-      companyEmail: 'email@company.com',
-      companyAddress: '123 Business St',
-      companyCity: 'New York',
-      companyPostalCode: '10001',
-      companyCountry: 'USA',
+      companyName: '',
+      companyEmail: '',
+      companyAddress: '',
+      companyCity: '',
+      companyPostalCode: '',
+      companyCountry: '',
       clientName: '',
       clientEmail: '',
       clientAddress: '',
