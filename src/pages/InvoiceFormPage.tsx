@@ -16,6 +16,12 @@ export function InvoiceFormPage() {
   const [formData, setFormData] = useState<CreateInvoiceInput>(() => {
     if (existingInvoice) {
       return {
+        companyName: existingInvoice.companyName,
+        companyEmail: existingInvoice.companyEmail,
+        companyAddress: existingInvoice.companyAddress,
+        companyCity: existingInvoice.companyCity || '',
+        companyPostalCode: existingInvoice.companyPostalCode || '',
+        companyCountry: existingInvoice.companyCountry || '',
         clientName: existingInvoice.clientName,
         clientEmail: existingInvoice.clientEmail,
         clientAddress: existingInvoice.clientAddress,
@@ -30,6 +36,12 @@ export function InvoiceFormPage() {
       }
     }
     return {
+      companyName: 'Your Company',
+      companyEmail: 'email@company.com',
+      companyAddress: '123 Business St',
+      companyCity: 'New York',
+      companyPostalCode: '10001',
+      companyCountry: 'USA',
       clientName: '',
       clientEmail: '',
       clientAddress: '',
@@ -167,14 +179,15 @@ export function InvoiceFormPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Your Company
+                  Company Name
                 </label>
                 <input
                   type="text"
+                  name="companyName"
                   placeholder="Your Company Name"
-                  defaultValue="My Company"
-                  disabled
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-400 cursor-not-allowed"
+                  value={formData.companyName}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
 
@@ -184,10 +197,11 @@ export function InvoiceFormPage() {
                 </label>
                 <input
                   type="email"
+                  name="companyEmail"
                   placeholder="your@email.com"
-                  disabled
-                  defaultValue="your@email.com"
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-400 cursor-not-allowed"
+                  value={formData.companyEmail}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
 
@@ -197,10 +211,11 @@ export function InvoiceFormPage() {
                 </label>
                 <input
                   type="text"
+                  name="companyAddress"
                   placeholder="Your Address"
-                  disabled
-                  defaultValue="123 Main Street"
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-400 cursor-not-allowed"
+                  value={formData.companyAddress}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
 
@@ -210,10 +225,11 @@ export function InvoiceFormPage() {
                 </label>
                 <input
                   type="text"
+                  name="companyCity"
                   placeholder="City"
-                  disabled
-                  defaultValue="London"
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-400 cursor-not-allowed"
+                  value={formData.companyCity || ''}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
 
@@ -223,10 +239,11 @@ export function InvoiceFormPage() {
                 </label>
                 <input
                   type="text"
+                  name="companyPostalCode"
                   placeholder="Postal Code"
-                  disabled
-                  defaultValue="E1 2IZ"
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-400 cursor-not-allowed"
+                  value={formData.companyPostalCode || ''}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
 
@@ -236,10 +253,11 @@ export function InvoiceFormPage() {
                 </label>
                 <input
                   type="text"
+                  name="companyCountry"
                   placeholder="Country"
-                  disabled
-                  defaultValue="United Kingdom"
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-400 cursor-not-allowed"
+                  value={formData.companyCountry || ''}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
             </div>
