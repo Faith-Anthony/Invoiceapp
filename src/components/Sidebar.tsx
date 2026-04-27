@@ -9,7 +9,7 @@ export function Sidebar() {
   return (
     <>
       {/* Mobile/Tablet Header (Top Bar) - shows on screen < 1024px */}
-      <header className="flex items-center justify-between w-full px-4 py-4 block lg:hidden bg-slate-800 dark:bg-slate-800 shadow-lg sticky top-0 z-40">
+      <header className="flex items-center justify-between w-full px-4 py-4 block lg:hidden shadow-lg sticky top-0 z-40" style={{ backgroundColor: '#373B53' }}>
         <div className="w-8 h-8">
           <Logo />
         </div>
@@ -38,7 +38,7 @@ export function Sidebar() {
       </header>
 
       {/* Desktop Sidebar (Left Bar) - shows on screen >= 1024px */}
-      <aside className="hidden lg:flex flex-col items-center w-[100px] min-h-screen px-0 py-6 fixed left-0 top-0 z-40 bg-gradient-to-b from-primary to-primary-dark dark:from-slate-800 dark:to-slate-900 shadow-lg">
+      <aside className="hidden lg:flex flex-col items-center w-[100px] min-h-screen px-0 py-6 fixed left-0 top-0 z-40 shadow-lg" style={{ backgroundColor: '#373B53' }}>
         {/* Logo */}
         <div className="mb-10">
           <div className="w-10 h-10">
